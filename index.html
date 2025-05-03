@@ -17,21 +17,21 @@
             
             
             mostraContatti : function() {
-                contatti.forEach(contatti => {
-                    console.log(`${contatti.nome} ${contatti.telefono}`)
+                this.contatti.forEach(contatti => {
+                    console.log(`${contatti.nome} ${contatti.telefono}`);
                 })
             },
-            mostraContatto: function(nome) {
+            mostraContatto: function(nome, telefono) {
                 let nTelefono = "3333333333";
                 let name = "Paola";
-                let contatto = agenda.contatti.find(contatto => contatto.nome === name && contatto.telefono === nTelefono);
+                let contatto = this.contatti.find(contatto => contatto.nome === nome && contatto.telefono === telefono);
                 if (contatto) {
                     console.log(`${contatto.nome} ${contatto.telefono}`);
                 } else {
                     console.log("Contatto non trovato");
                 }
             },
-            eliminaContatto: function(){
+            eliminaContatto: function(nome){
                 let index = this.contatti.findIndex(c => c.nome.toLowerCase() === nome.toLowerCase());
                 if (index !== -1) {
                     this.contatti.splice(index, 1);
@@ -41,13 +41,13 @@
                 }
             },
             aggiungiContatto: function(nome, telefono) {
-                agenda.contatti.push({ nome, telefono });
-                console.log(`Contatto ${nome} aggiunto con numero ${telefono}`)
+                this.contatti.push({ nome, telefono });
+                console.log(`Contatto ${nome} aggiunto con numero ${telefono}`);
             },   
-            modificaContatto: function(){             
-                let contattoDaModificare = contatti.find(contatto => contatto.nome === 'Lorenzo')
+            modificaContatto: function(nome, telefono){             
+                let contattoDaModificare = this.contatti.find(contatto => contatto.nome === 'Lorenzo');
                 if (contattoDaModificare) {
-                    contattoDaModificare.telefono = '3335555555'
+                    contattoDaModificare.telefono = '33364988755';
                 }
                 console.log(contatti)
             },
